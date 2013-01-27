@@ -95,6 +95,7 @@ var form2js = (function()
 			if (skipEmpty && (value === '' || value === null)) continue;
 
 			name = nameValues[i].name;
+			name = name.replace(/\[([a-zA-Z_]*)\]/g, delimiter + '$1');
 			_nameParts = name.split(delimiter);
 			nameParts = [];
 			currResult = result;
